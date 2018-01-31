@@ -1,0 +1,106 @@
+ /*
+  * Name: Devin Smaldore
+  * Date: 2-3-16
+  * Class: csc2210
+  * Location: ~/public_html/csc2210/thinkbig/styling.css/
+  * Comments: Styling for the thinkBIG website.
+  */
+  
+   table { 
+               border-collapse:collapse;
+               width:550px;
+	       font-size: 10pt;
+	       margin: auto;
+         }
+   td,th {
+            border: 1px solid black;
+            height: 20px;
+	    width: 15px;
+         }
+ 
+   body { 
+           background-color: #3F256B;
+        }
+   nav { 
+	      float: left;
+	      margin: 20px;
+	      padding: 10px;
+	      top: 0px;
+	      right: 0px;
+	      font-family: Georgia;
+       }
+   nav a {
+	 text-decoration: none;
+         }
+   nav a:hover {
+	       color: #FFE1FF;
+	       background-color: #3F256B;
+	       }
+   .pad {
+      padding: 10px;
+        }
+   .navbar {
+           list-style-type: none;
+           margin: 0;
+           padding: 0;
+           width: 25%;
+	   height: 100%;
+           overflow: auto;
+           background-color: #f1f1f1;
+	   }
+   #hpucontainer {  
+   	         width: 400px;
+	         margin-left: auto;
+	         margin-right: auto;
+	         }
+   .display { 
+            display: inline;
+            }
+   #container { 
+              width: 640px;
+              margin-left: auto;
+              margin-right: auto;
+	      margin-top: 10px;
+	      margin-bottom: 10px;
+              background-color: #FFE1FF;
+              color: black;
+              border: 1px solid black;
+      	      padding-left: 20px;
+	      padding-right: 20px;
+              padding-bottom: 60px;
+	      font-family: Georgia;
+	      font-size: 10pt; 
+              }
+   .bold {
+	   font-weight:bold;
+         }
+   .ral {
+           text-align: right;
+        }
+   .lal {
+           text-align: left;
+        }
+   .padcells {
+           padding-left: 40px;
+        }
+   .tac {
+      	   text-align: center;
+        }
+   .homestyle {
+           font-size: 14pt;
+              }
+   .purple {
+           color: #3F256B;
+           }
+
+   .applicationtable {
+	   background-color: #FFFFFF; 
+	   border-top: 1px #BBBBBB solid;
+	   border-bottom: 1px #BBBBBB solid;
+	   border-right: 1px #BBBBBB solid;
+	   border-left: 1px #BBBBBB solid; 
+	   border-width: 1px;
+	   font-size : 11px;
+	   font-weight: bold;
+	   text-align: right;
+	   }

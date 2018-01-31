@@ -1,0 +1,177 @@
+-- MySQL dump 10.14  Distrib 5.5.41-MariaDB, for Linux (x86_64)
+--
+-- Host: localhost    Database: csc2210_dsmaldore_db
+-- ------------------------------------------------------
+-- Server version	5.5.41-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `employees`
+--
+
+DROP TABLE IF EXISTS `employees`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `employees` (
+  `id` tinyint(8) NOT NULL AUTO_INCREMENT,
+  `first` varchar(20) DEFAULT NULL,
+  `last` varchar(20) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `position` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ID` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employees`
+--
+
+LOCK TABLES `employees` WRITE;
+/*!40000 ALTER TABLE `employees` DISABLE KEYS */;
+INSERT INTO `employees` VALUES (1,'John','Roberts','45 There St. , Townville','Telephonist'),(2,'Bob','Smith','128 Here St. , Cityname','Marketing Manager'),(3,'Brad','Johnson','1/34 nowhere Blvd. , Snowston','Doorman'),(4,'Devin','Smaldore','1406 Turnberry Way, Bel Air','Legend');
+/*!40000 ALTER TABLE `employees` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `instruments`
+--
+
+DROP TABLE IF EXISTS `instruments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `instruments` (
+  `id` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `m_id` tinyint(4) DEFAULT NULL,
+  `type` varchar(20) DEFAULT NULL,
+  `make` varchar(20) DEFAULT NULL,
+  `model` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ID` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `instruments`
+--
+
+LOCK TABLES `instruments` WRITE;
+/*!40000 ALTER TABLE `instruments` DISABLE KEYS */;
+INSERT INTO `instruments` VALUES (1,14,'Mandolin','Gibson','F-5'),(2,23,'guitar','Martin','HD-28 2R'),(3,14,'guitar','Gibson','Les Paul'),(4,23,'guitar','Taylor','310 CE'),(5,23,'Bass','Fender','The Beast'),(6,25,'guitar','Paul Reed Smith','Custom 24');
+/*!40000 ALTER TABLE `instruments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `musicians`
+--
+
+DROP TABLE IF EXISTS `musicians`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `musicians` (
+  `id` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `first` varchar(20) DEFAULT NULL,
+  `last` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ID` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `musicians`
+--
+
+LOCK TABLES `musicians` WRITE;
+/*!40000 ALTER TABLE `musicians` DISABLE KEYS */;
+INSERT INTO `musicians` VALUES (14,'John','Roberts'),(23,'Bob','Smith'),(25,'Brad','Johnson');
+/*!40000 ALTER TABLE `musicians` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `proposal`
+--
+
+DROP TABLE IF EXISTS `proposal`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `proposal` (
+  `id` tinyint(8) NOT NULL AUTO_INCREMENT,
+  `facproposerfirst` varchar(20) DEFAULT NULL,
+  `facproposerlast` varchar(20) DEFAULT NULL,
+  `depofproposer` varchar(30) DEFAULT NULL,
+  `officephonenum` varchar(15) DEFAULT NULL,
+  `email` varchar(30) DEFAULT NULL,
+  `cofacproposer` varchar(40) DEFAULT NULL,
+  `depofcofacproposer` varchar(50) DEFAULT NULL,
+  `projtitle` varchar(30) DEFAULT NULL,
+  `startdate` varchar(15) DEFAULT NULL,
+  `enddate` varchar(15) DEFAULT NULL,
+  `amtrequested` varchar(15) DEFAULT NULL,
+  `abstracts` varchar(200) DEFAULT NULL,
+  `url` varchar(100) NOT NULL,
+  `approval` varchar(5) NOT NULL,
+  `year` varchar(5) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ID` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `proposal`
+--
+
+LOCK TABLES `proposal` WRITE;
+/*!40000 ALTER TABLE `proposal` DISABLE KEYS */;
+INSERT INTO `proposal` VALUES (70,'Dr. John','Turpin','School of Art and Design','345-799-9672','jturpin@gmail.com','Dr. Carpenter, Dr. Foster, Dr. Paul, Mr.','Architectual Design, Graphics','YOTA Steering Committee','03/12/2014','08/17/2014','35,266.75','The overarching goal \r\nof the HPU Year of the Arts\r\n(YOTA) is to engage the HPU and local \r\ncommunity in an intellectually stimulating discourse in the business  of  the  Fine  and  Visual  Arts.',' http://linus.highpoint.edu/~rshore/thinkbig/examples/Turpin_John_proposal.pdf','1','2014'),(71,'Dr. Holly','Middleton','Department of ESL','334-567-3414','hmiddleton@highpoint.edu','Assistant Professor and the Director of ','Department of English','The HPU Digital Learning Initi','10/13/2013','07/22/2014','22,345.50','this project will have a broad impact on the HPU student body and will help benefit many people for years to come.','http://linus.highpoint.edu/~rshore/thinkbig/examples/Middleton_Holly_proposal.pdf','1','2013'),(72,'Dr. Laurie','Zach','Department of Mathmetics','123-456-0987','lzach@highpoint.edu','Dr. Piechnik, Dr. Ohara','Department of Mathmetics','The Flipped Classroom Experime','01/16/2013','10/05/2013','3,000.00','This Think Big proposal requests funding to conduct\r\n experimental flipped classrooms in four core \r\nmathematics classes offered at High Point Universit\r\ny.  As higher education continues to compete f','http://linus.highpoint.edu/~rshore/thinkbig/examples/Zack_Laurie_proposal.pdf','1','2013'),(76,'Rev. Dr. Joe','Blosser','Religion and Philosophy','776-845-9823','jblosser@highpoint.edu','Dr. Fisher, Dr. Ringel','Anthropology, History','The HPU Democracy USA Project','02/12/2012','11/03/2012','23,000','The HPU D-Â­â€USA Project is the result of a large group of faculty from across the University who met several times over the course of the Fall 2011 semester to craft the proposal and potential proj','proposals/2016/IMG_20151115_0009.pdf','1','2012'),(78,'Dr. Stephanie','Crofton','Economics','443-345-9023','scrofton@highpoint.edu','Dr. Daniel Hall','Economics','Experimental Learning, theres ','09/23/2011','03/12/2012','12,750','The Think Big grant will help fund the development of apps and software programs.','http://linus.highpoint.edu/~rshore/thinkbig/examples/Crofton_Hall.pdf','1','2011'),(79,'Mr. Ed','Simpson','Theatre','443-345-9023','esimpson@highpoint.edu','Dr. Wilson','Theatre','The Cariani Project; HPU New P','08/29/2010','02/02/2011','17,000','If I receive this grant, the new play Contest will be the next big thing for theatre majors!','proposals/2016/IMG_20151115_0003.pdf','1','2010'),(81,'Dr. Chris','Fowler','Chemistry and Physics','617-342-8504','cfowler@highpoint.edu','Dr. Titus','Physics','Chemistry Interactive Multi-Me','05/01/2010','10/05/2010','53,292','this grant would be used to have the students further their education if the fields of Chemistry and Physics','proposals/2016/IMG_20151115_0003.pdf','1','2010'),(82,'Dr. Elizabeth','McCorquodale','Business','617-342-8504','emccorquo@highpoint.edu','Dr. Johnson','English','AESOP - After-school Experient','01/23/2009','09/12/2009','32,465','This grant proposes the establishment of a science outreach program.  High Point University students will develop portable laboratory demonstrations, mini lectures, and hands-on experiments and then t','http://linus.highpoint.edu/~rshore/thinkbig/examples/2009/AESOP_think_big_final_draft.doc','1','2009');
+/*!40000 ALTER TABLE `proposal` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `students`
+--
+
+DROP TABLE IF EXISTS `students`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `students` (
+  `id` tinyint(8) NOT NULL AUTO_INCREMENT,
+  `first` varchar(20) DEFAULT NULL,
+  `last` varchar(20) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
+  `age` varchar(5) DEFAULT NULL,
+  `zip` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ID` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `students`
+--
+
+LOCK TABLES `students` WRITE;
+/*!40000 ALTER TABLE `students` DISABLE KEYS */;
+INSERT INTO `students` VALUES (1,'Devin','Smaldore','123','20','21015');
+/*!40000 ALTER TABLE `students` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-03-04 18:17:43
